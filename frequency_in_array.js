@@ -9,4 +9,4 @@ const showFrequency = (arr) => {
   return output;
 };
 
-console.log(showFrequency(arr));
+console.log(showFrequency(arr)); // { '1': 3, '2': 2, '3': 1, '4': 1, '5': 1, '6': 1, '10': 1 }
