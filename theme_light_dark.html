@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LocalStorage Theme Example</title>
+    <style>
+      body[data-theme="dark"] {
+        background-color: black;
+        color: white;
+      }
+      body[data-theme="light"] {
+        background-color: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>LocalStorage-Based Theme Selector</h1>
+    <button onclick="setTheme('dark')">Dark Mode</button>
+    <button onclick="setTheme('light')">Light Mode</button>
+    <button id="resetTheme">Reset Theme</button>
+
+    <script>
+      function setTheme(theme) {
+        localStorage.setItem("theme", theme); // Store theme in localStorage
+        document.body.setAttribute("data-theme", theme);
+      }
+
+      function applyTheme() {
+        const theme = localStorage.getItem("theme") || "light"; // Default to light
+        document.body.setAttribute("data-theme", theme);
+      }
+
+      document
+        .getElementById("resetTheme")
+        .addEventListener("click", function () {
+          localStorage.removeItem("theme"); // Remove theme from storage
+          location.reload(); // Reload to apply default theme
+        });
+
+      applyTheme(); // Apply theme on page load
+    </script>
+  </body>
+</html>
