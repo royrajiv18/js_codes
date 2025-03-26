@@ -154,7 +154,7 @@ console.log(add(1, 2)); // Output: 3
 //****************************************** Promises***********************
 // creating a promise
 const promise = new Promise((resolve, reject) => {
-  const number = Math.floor(Math.random() * 10);
+  const number = Math.floor(Math.random() * 100);
 
   if (number % 2 === 0) {
     resolve(number); // Resolve the promise with the even number
